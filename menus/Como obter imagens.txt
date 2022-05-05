@@ -1,0 +1,20 @@
+http://jpeg-optimizer.com/
+
+---------------------------------------------------
+Usar imagens originais, e optimizar com as opcoes:
+
+Large:
+Compression Level         - 65
+New Photo Width in Pixels - 1800
+
+Colocar imagens em menus\LANG\1800
+
+Large:
+Compression Level         - 65
+New Photo Width in Pixels - 507
+
+Colocar imagens em menus\LANG\507
+----------------------------------------------------
+
+O objetivo e optimizar as imagens do menu, e obter uma grande e uma pequena de modo a melhorar a performance e velocidade do menu.
+Sera necessario ter as imagens em 507px e 1800px para cada uma das linguas (PT e EN)
