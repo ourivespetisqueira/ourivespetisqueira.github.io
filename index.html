@@ -1,6 +1,7 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,27 +16,84 @@
   <meta property="og:description" content="Menu do restaurante Ourives Petisqueira.">
   <meta property="og:image" content="image.png">
 
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
 </head>
 
 <body>
-  <div style="width: 100vw, height: 100vh, background-color: black">
-    <div style="width: 100%">
-      <ul>
-        <li><a href="#">PT</a></li>
-        <li><a href="#">EN</a></li>
-      </ul>
+  <div id="wrapper">
+    <div id="topMenu">
+      <nav class="navMenu">
+        <a id="ptlink" onclick='toggleDisplay("PT")'>PT</a>
+        <a id="enlink" onclick='toggleDisplay("EN")'>EN</a>
+        <div class="dot"></div>
+      </nav>
     </div>
-  
-   <div style="width: 100%, height: 100%">
-      menu img
+    <div id="ptmenu" class="container">
+      <!-- Gallery -->
+      <a href="menus/PT/1.jpg" class="glightbox active" data-gallery="gallery1">
+        <img src="menus/PT/1.jpg" alt="image" />
+      </a>
+      <a href="menus/PT/2.jpg" class="glightbox" data-gallery="gallery1">
+        <img src="menus/PT/2.jpg" alt="image" />
+      </a>
+      <a href="menus/PT/3.jpg" class="glightbox" data-gallery="gallery1">
+        <img src="menus/PT/3.jpg" alt="image" />
+      </a>
+
     </div>
+
+    <div id="enmenu" class="container">
+      <!-- Gallery -->
+      <a href="menus/EN/1.jpg" class="glightbox" data-gallery="gallery2">
+        <img src="menus/EN/1.jpg" alt="image" />
+      </a>
+      <a href="menus/EN/2.jpg" class="glightbox" data-gallery="gallery2">
+        <img src="menus/EN/2.jpg" alt="image" />
+      </a>
+      <a href="menus/EN/3.jpg" class="glightbox" data-gallery="gallery2">
+        <img src="menus/EN/3.jpg" alt="image" />
+      </a>
+
+    </div>
+
   </div>
-  <script src="js/scripts.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+  
+  <script type="text/javascript">
+    const lightbox = GLightbox({ touchNavigation: true });
+
+    function toggleDisplay(lang) {
+      var ptdiv = document.getElementById("ptmenu");
+      var endiv = document.getElementById("enmenu");
+      var ptlink = document.getElementById("ptlink");
+      var enlink = document.getElementById("enlink");
+
+      if (lang === "PT") {
+        endiv.style.display = "none";
+        ptdiv.style.display = "block";
+        ptlink.classList.add("focus");
+        enlink.classList.remove("focus");
+      } else {
+        endiv.style.display = "block";
+        ptdiv.style.display = "none";
+        enlink.classList.add("focus");
+        ptlink.classList.remove("focus");
+      }
+
+    }
+
+    toggleDisplay('PT')
+
+  </script>
 </body>
+
 </html>
